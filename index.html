@@ -4,83 +4,155 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sonia Tarot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --accent-purple: #6c4b7d;
+      --accent-dark: #4a2c5a;
+      --accent-light: #d1c4e9;
+    }
     body {
       margin: 0;
-      font-family: "Calibri", sans-serif;
-      line-height: 1.25;
-      background: #fdf6f0;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9fb;
+      colour: #222;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     header {
       background: #fff;
-      text-align: center; /* fixed */
-      padding: 1em;
+      padding: 2em 1em;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     header img {
       max-width: 300px;
       width: 100%;
       height: auto;
     }
+    header p {
+      font-weight: 500;
+      font-size: 1.2em;
+      colour: var(--accent-purple);
+      margin-top: 0.5em;
+    }
     nav {
-      background: #7a4f7c;
+      background: var(--accent-purple);
       display: flex;
-      justify-content: center; /* fixed */
-      gap: 1em;
-      padding: 0.75em 0;
+      justify-content: center;
+      gap: 1.5em;
+      padding: 1em 0;
+      box-shadow: inset 0 -3px 0 var(--accent-dark);
     }
     nav button {
-      background: none;
-      border: none;
-      color: white;
-      font-weight: bold;
-      font-size: 1em;
+      background: transparent;
+      border: 2px solid transparent;
+      colour: white;
+      font-weight: 700;
+      font-size: 1.1em;
+      padding: 0.5em 1.2em;
+      border-radius: 6px;
       cursor: pointer;
-      padding: 0.5em 1em;
+      transition: all 0.3s ease;
     }
+    nav button:hover,
     nav button.active {
-      background: #522e5b;
-      border-radius: 4px;
+      background: var(--accent-dark);
+      border-color: var(--accent-light);
+      box-shadow: 0 0 8px var(--accent-light);
     }
     section {
-      max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1em;
+      max-width: 900px;
+      margin: 3em auto;
+      padding: 0 2em;
       display: none;
+      animation: fadeIn 0.6s ease forwards;
     }
     section.active {
       display: block;
     }
     h2 {
-      color: #522e5b;
-      margin-top: 0;
+      colour: var(--accent-dark);
+      font-weight: 700;
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
+    }
+    h3 {
+      colour: var(--accent-purple);
+      font-weight: 600;
+      margin-top: 1.5em;
+    }
+    p {
+      line-height: 1.6;
+      margin-bottom: 1em;
+      colour: #333;
     }
     .button {
+      background: var(--accent-purple);
+      colour: white;
+      border-radius: 8px;
+      padding: 0.85em 1.8em;
+      font-weight: 700;
+      font-size: 1.1em;
+      box-shadow: 0 4px 12px rgba(108, 75, 125, 0.4);
+      transition: background 0.3s ease;
       display: inline-block;
-      padding: 0.75em 1.5em;
-      background: #522e5b;
-      color: white;
+      margin-top: 1.5em;
       text-decoration: none;
-      border-radius: 5px;
-      margin-top: 1em;
       cursor: pointer;
     }
+    .button:hover {
+      background: var(--accent-dark);
+      box-shadow: 0 6px 18px rgba(74, 44, 90, 0.7);
+    }
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center; /* fixed */
-      gap: 1em;
-      margin-top: 1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+      margin-top: 1.5em;
     }
     .gallery img {
-      width: 200px;
-      border-radius: 8px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
     }
     .reading-logo {
       display: block;
       max-width: 250px;
       margin: 0 auto 1em auto;
       border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(108, 75, 125, 0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background: #eee;
+      margin-top: 2em;
+      font-size: 0.9em;
+      colour: var(--accent-dark);
+    }
+    footer a {
+      colour: var(--accent-dark);
+      text-decoration: none;
+      margin: 0 0.5em;
+      transition: colour 0.3s ease;
+    }
+    footer a:hover {
+      colour: var(--accent-purple);
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -102,35 +174,32 @@
 
   <section id="home" class="active">
     <h2>Welcome to Sonia Tarot</h2>
-   <p><strong>Interested in tarot but intimidated by deep spirituality?</strong>
-  I approach tarot with kindness and openness. Sonia Tarot is a friendly, safe space to play and experiment. A place to ask questions, explore storytelling, connect with your intuition, and grow your self-awareness at your own pace. Whether you’re curious or ready to dive deeper, I welcome all journeys and celebrate the unique way tarot can inspire us.</p>
-  <p>Discover honest, intuitive tarot readings that guide you through life’s questions.</p>
+    <p>Interested in tarot but intimidated by deep spirituality?  
+    I approach tarot with kindness and openness. Sonia Tarot is a friendly, safe space to play and experiment. A place to ask questions, explore storytelling, connect with your intuition, and grow your self-awareness at your own pace. Whether you’re curious or ready to dive deeper, I welcome all journeys and celebrate the unique way tarot can inspire us.</p>
+    <p>Discover honest, intuitive tarot readings that guide you through life’s questions.</p>
 
-    <h3>My reading style</h3>
+    <h3>My Reading Style</h3>
     <p>My tarot readings are intuitive, reflective, and down-to-earth. I combine traditional card meanings with storytelling, symbolism, and my own intuitive guidance. Sessions are relaxed and conversational—sometimes deep, sometimes light-hearted—but always rooted in honesty and compassion. The aim is not to predict the future, but to offer clarity, new perspectives, and support your own inner wisdom.</p>
-    <h3>What to expect in my readings</h3>
+
+    <h3>What to Expect in My Readings</h3>
     <p>Each session is a gentle, intuitive space for reflection. I use tarot and oracle cards alongside my intuitive senses to explore your questions or current situation. You can expect a relaxed, informal chat—guided by the cards—with time for your thoughts, emotions, and questions.</p>
     <p>Readings may feel emotional, empowering, or thought-provoking. You don’t need to believe in anything—just bring an open mind. I’ll help you feel safe, seen, and supported as we explore together. The focus is on insight, not prediction—offering a mirror to your own inner wisdom.</p>
-    <h3>How might you feel in a reading?</h3>
+
+    <h3>How Might You Feel in a Reading?</h3>
     <p>Everyone’s experience is different. You might feel calm, emotional, curious, or even surprised. Some people feel seen or relieved, others leave with a sense of clarity or direction.</p>
     <p>It’s also normal to feel a bit nervous—especially if it’s your first time or we’re touching on something close to the heart. You might not know what to expect, and that’s okay. I aim to hold space gently and without judgement, so you can relax, be yourself, and take what resonates.</p>
     <p>However you feel, you’re always in control of the session.</p>
   </section>
 
-<section id="about">
-  <div style="display: flex; align-items: flex-start; gap: 1rem;">
-    <img src="images/winter.jpeg" alt="Sonia" style="width: 250px; height: auto; border-radius: 8px; flex-shrink: 0;" />
-    <div>
-      <h2>About Me</h2>
-      <p>Hi, I’m Sonia.</p>
-      <p>My first memory of tarot dates back to the early 90s. I must have been 11 or 12—I remember my mum using The Egyptian Tarot, reading directly from the book and having fun with her friends. How much I wanted to be part of that too! Tarot captured my imagination then, and I’ve been fascinated ever since.</p>
-      <p>When I was 17, I got my first deck—a Major Arcana only—it was a freebie in a fashion magazine. I kept it and cherish it, but never read with it. It took me a few decades after that before I finally decided I was ready to immerse myself in the world of tarot.</p>
-      <p>Now, tarot is a part of my life. I use it as a tool for personal growth, to unlock my creativity, connect with myself, and meditate (I just love looking at the images… can we call that meditation?!).</p>
-      <p>I love how rich tarot is—the art, the history, the symbolism, and the deep sense of magic that runs through it all. I’m here to share that magic with you, helping you explore your own story and find clarity through the cards. Whether you’re new to tarot or have been on this path for a while, I’d love to support your journey.</p>
-    </div>
-  </div>
-</section>
-
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="images/logoblueline.jpeg" alt="Logo Blue Line" class="reading-logo" />
+    <p>Hi, I’m Sonia.</p>
+    <p>My first memory of tarot dates back to the early 90s. I must have been 11 or 12—I remember my mum using The Egyptian Tarot, reading directly from the book and having fun with her friends. How much I wanted to be part of that too! Tarot captured my imagination then, and I’ve been fascinated ever since.</p>
+    <p>When I was 17, I got my first deck—a Major Arcana only—it was a freebie in a fashion magazine. I kept it and cherish it, but never read with it. It took me a few decades after that before I finally decided I was ready to immerse myself in the world of tarot.</p>
+    <p>Now, tarot is a part of my life. I use it as a tool for personal growth, to unlock my creativity, connect with myself, and meditate (I just love looking at the images… can we call that meditation?!).</p>
+    <p>I love how rich tarot is—the art, the history, the symbolism, and the deep sense of magic that runs through it all. I’m here to share that magic with you, helping you explore your own story and find clarity through the cards. Whether you’re new to tarot or have been on this path for a while, I’d love to support your journey.</p>
+  </section>
 
   <section id="reading">
     <h2>Reading Menu</h2>
@@ -152,7 +221,7 @@
     <strong>A:</strong> Typically 20–30 minutes, depending on the reading type.</p>
 
     <p><strong>Q:</strong> Can I get a reading remotely?<br />
-    <strong>A:</strong> Yes, I offer readings in person or by video call.</p>
+    <strong>A:</strong> Yes, I offer readings by phone or video call.</p>
   </section>
 
   <section id="code">
@@ -194,10 +263,10 @@
     });
   </script>
 
-  <footer style="text-align:center; padding:1em; background:#eee; margin-top:2em; font-size:0.9em; color:#522e5b;">
+  <footer>
     &copy; 2025 Sonia Tarot | 
-    <a href="mailto:your@email.com" style="color:#522e5b; text-decoration:none;">Email</a> | 
-    <a href="https://instagram.com/yourprofile" target="_blank" style="color:#522e5b; text-decoration:none;">Instagram</a>
+    <a href="mailto:your@email.com">Email</a> | 
+    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">Instagram</a>
   </footer>
 
 </body>
