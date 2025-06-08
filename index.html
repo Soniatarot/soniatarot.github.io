@@ -1,180 +1,197 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonia Tarot</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Calibri", sans-serif;
+      background: #fdf6f0;
+      color: #333;
+    }
+    header {
+      background: #fff;
+      text-align: center; /* fixed */
+      padding: 1em;
+    }
+    header img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+    nav {
+      background: #7a4f7c;
+      display: flex;
+      justify-content: center; /* fixed */
+      gap: 1em;
+      padding: 0.75em 0;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      padding: 0.5em 1em;
+    }
+    nav button.active {
+      background: #522e5b;
+      border-radius: 4px;
+    }
+    section {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1em;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #522e5b;
+      margin-top: 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background: #522e5b;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 1em;
+      cursor: pointer;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* fixed */
+      gap: 1em;
+      margin-top: 1em;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 8px;
+    }
+    .reading-logo {
+      display: block;
+      max-width: 250px;
+      margin: 0 auto 1em auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-  <meta charset="UTF-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\
-  <title>Sonia Tarot</title>\
-  <style>\
-    body \{\
-      margin: 0;\
-      font-family: "Georgia", serif;\
-      background: #fdf6f0;\
-      color: #333;\
-      line-height: 1.6;\
-    \}\
-    header \{\
-      background: #fff;\
-      text-align: center;\
-      padding: 1.5em 1em;\
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);\
-    \}\
-    header img \{\
-      max-width: 280px;\
-      width: 100%;\
-      height: auto;\
-      margin-bottom: 0.5em;\
-      border-radius: 8px;\
-      box-shadow: 0 4px 8px rgba(82,46,91,0.3);\
-    \}\
-    header p \{\
-      font-style: italic;\
-      colour: #522e5b;\
-      font-size: 1.1em;\
-      margin: 0;\
-      colour: #522e5b;\
-    \}\
-    nav \{\
-      background: #7a4f7c;\
-      text-align: center;\
-      padding: 0.75em 0;\
-      box-shadow: inset 0 -3px 6px rgba(0,0,0,0.1);\
-    \}\
-    nav a \{\
-      color: white;\
-      text-decoration: none;\
-      margin: 0 1.2em;\
-      font-weight: bold;\
-      font-size: 1.05em;\
-      transition: colour 0.3s ease;\
-    \}\
-    nav a:hover \{\
-      colour: #cba3d1;\
-    \}\
-    .section \{\
-      padding: 2em 1em;\
-      max-width: 800px;\
-      margin: auto;\
-    \}\
-    h1, h2 \{\
-      color: #522e5b;\
-      text-align: centre;\
-      margin-bottom: 1em;\
-    \}\
-    ul \{\
-      padding-left: 1.2em;\
-    \}\
-    ul li \{\
-      margin-bottom: 0.8em;\
-    \}\
-    footer \{\
-      text-align: centre;\
-      padding: 1em;\
-      font-size: 0.9em;\
-      background: #eee;\
-      margin-top: 3em;\
-      color: #555;\
-      box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);\
-    \}\
-    .button \{\
-      display: inline-block;\
-      padding: 0.75em 1.5em;\
-      background: #522e5b;\
-      color: white;\
-      text-decoration: none;\
-      border-radius: 5px;\
-      margin-top: 1.2em;\
-      transition: background 0.3s ease;\
-    \}\
-    .button:hover \{\
-      background: #7a4f7c;\
-    \}\
-\
-    /* New gallery section */\
-    .gallery \{\
-      display: grid;\
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\
-      gap: 1em;\
-      max-width: 800px;\
-      margin: 2em auto;\
-      padding: 0 1em;\
-    \}\
-    .gallery img \{\
-      width: 100%;\
-      border-radius: 8px;\
-      box-shadow: 0 4px 10px rgba(82,46,91,0.3);\
-      transition: transform 0.3s ease;\
-    \}\
-    .gallery img:hover \{\
-      transform: scale(1.05);\
-      box-shadow: 0 8px 16px rgba(82,46,91,0.5);\
-      cursor: pointer;\
-    \}\
-\
-    /* Responsive tweaks */\
-    @media (max-width: 480px) \{\
-      nav a \{\
-        display: block;\
-        margin: 0.5em 0;\
-      \}\
-    \}\
-  </style>\
-</head>\
-<body>\
-\
-  <header>\
-    <img src="images/logo.jpeg" alt="Sonia Tarot logo" />\
-    <p>Guidance through the cards \'96 honest, intuitive readings</p>\
-  </header>\
-\
-  <nav>\
-    <a href="#about">About</a>\
-    <a href="#services">Services</a>\
-    <a href="#gallery">Gallery</a>\
-    <a href="#contact">Contact</a>\
-  </nav>\
-\
-  <section class="section" id="about">\
-    <h2>About Me</h2>\
-    <p>I'm Sonia, a tarot reader offering intuitive, compassionate guidance to help you navigate life\'92s questions. Whether you're seeking clarity in love, career or spiritual path, I\'92m here to help you tune into your inner wisdom.</p>\
-  </section>\
-\
-  <section class="section" id="services">\
-    <h2>Tarot Services</h2>\
-    <ul>\
-      <li><strong>3-Card Reading \'96 \'a310:</strong> Quick insight into past, present and future.</li>\
-      <li><strong>Love Reading \'96 \'a320:</strong> Focused on relationships and emotional guidance.</li>\
-      <li><strong>Career Reading \'96 \'a320:</strong> Gain clarity on work, life path and decisions.</li>\
-    </ul>\
-    <a class="button" href="mailto:your@email.com">Book a Reading</a>\
-  </section>\
-\
-  <section class="section" id="gallery">\
-    <h2>Gallery</h2>\
-    <div class="gallery">\
-      <img src="images/logoblueline.jpeg" alt="Logo Blue Line" />\
-      <img src="images/chinita.jpeg" alt="Chinita" />\
-      <img src="images/winter.jpeg" alt="Winter" />\
-      <img src="images/summer.jpeg" alt="Summer" />\
-    </div>\
-  </section>\
-\
-  <section class="section" id="contact">\
-    <h2>Contact</h2>\
-    <p>Email me at <a href="mailto:your@email.com">your@email.com</a></p>\
-    <p>Or find me on Instagram: <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">@yourprofile</a></p>\
-  </section>\
-\
-  <footer>\
-    &copy; 2025 Sonia Tarot | Personal tarot readings with heart and clarity\
-  </footer>\
-\
-</body>\
-</html>\
-}
+  <header>
+    <img src="images/Logo.jpeg" alt="Sonia Tarot logo" />
+    <p>Guidance through the cards – honest, intuitive readings</p>
+  </header>
+
+  <nav>
+    <button class="tab-button active" data-tab="home">Home</button>
+    <button class="tab-button" data-tab="about">About Me</button>
+    <button class="tab-button" data-tab="reading">Reading Menu</button>
+    <button class="tab-button" data-tab="faq">FAQ</button>
+    <button class="tab-button" data-tab="code">Code of Practice</button>
+    <button class="tab-button" data-tab="terms">Terms & Conditions</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>Welcome to Sonia Tarot</h2>
+    <p>Discover honest, intuitive tarot readings that guide you through life’s questions.</p>
+
+    <h3>My Reading Style</h3>
+    <p>My tarot readings are intuitive, reflective, and down-to-earth. I combine traditional card meanings with storytelling, symbolism, and my own intuitive guidance. Sessions are relaxed and conversational—sometimes deep, sometimes light-hearted—but always rooted in honesty and compassion. The aim is not to predict the future, but to offer clarity, new perspectives, and support your own inner wisdom.</p>
+
+    <h3>What to Expect in My Readings</h3>
+    <p>Each session is a gentle, intuitive space for reflection. I use tarot and oracle cards alongside my intuitive senses to explore your questions or current situation. You can expect a relaxed, informal chat—guided by the cards—with time for your thoughts, emotions, and questions.</p>
+    <p>Readings may feel emotional, empowering, or thought-provoking. You don’t need to believe in anything—just bring an open mind. I’ll help you feel safe, seen, and supported as we explore together. The focus is on insight, not prediction—offering a mirror to your own inner wisdom.</p>
+
+    <h3>How Might You Feel in a Reading?</h3>
+    <p>Everyone’s experience is different. You might feel calm, emotional, curious, or even surprised. Some people feel seen or relieved, others leave with a sense of clarity or direction.</p>
+    <p>It’s also normal to feel a bit nervous—especially if it’s your first time or we’re touching on something close to the heart. You might not know what to expect, and that’s okay. I aim to hold space gently and without judgement, so you can relax, be yourself, and take what resonates.</p>
+    <p>However you feel, you’re always in control of the session.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi, I’m Sonia.</p>
+    <p>My first memory of tarot dates back to the early 90s. I must have been 11 or 12—I remember my mum using The Egyptian Tarot, reading directly from the book and having fun with her friends. How much I wanted to be part of that too! Tarot captured my imagination then, and I’ve been fascinated ever since.</p>
+    <p>When I was 17, I got my first deck—a Major Arcana only—it was a freebie in a fashion magazine. I kept it and cherish it, but never read with it. It took me a few decades after that before I finally decided I was ready to immerse myself in the world of tarot.</p>
+    <p>Now, tarot is a part of my life. I use it as a tool for personal growth, to unlock my creativity, connect with myself, and meditate (I just love looking at the images… can we call that meditation?!).</p>
+    <p>I love how rich tarot is—the art, the history, the symbolism, and the deep sense of magic that runs through it all. I’m here to share that magic with you, helping you explore your own story and find clarity through the cards. Whether you’re new to tarot or have been on this path for a while, I’d love to support your journey.</p>
+  </section>
+
+  <section id="reading">
+    <h2>Reading Menu</h2>
+    <img src="images/logoblueline.jpeg" alt="Logo Blue Line" class="reading-logo" />
+    <ul>
+      <li><strong>3-Card Reading – £10:</strong> Quick insight into past, present and future.</li>
+      <li><strong>Love Reading – £20:</strong> Focused on relationships and emotional guidance.</li>
+      <li><strong>Career Reading – £20:</strong> Gain clarity on work, life path and decisions.</li>
+    </ul>
+    <a class="button" href="mailto:your@email.com">Book a Reading</a>
+  </section>
+
+  <section id="faq">
+    <h2>FAQ</h2>
+    <p><strong>Q:</strong> How do I book a reading?<br />
+    <strong>A:</strong> Simply click the “Book a Reading” button or email me directly.</p>
+
+    <p><strong>Q:</strong> How long does a reading take?<br />
+    <strong>A:</strong> Typically 20–30 minutes, depending on the reading type.</p>
+
+    <p><strong>Q:</strong> Can I get a reading remotely?<br />
+    <strong>A:</strong> Yes, I offer readings by phone or video call.</p>
+  </section>
+
+  <section id="code">
+    <h2>Code of Practice</h2>
+    <p>I provide honest, confidential readings with respect and compassion. All sessions are held in a safe, supportive environment. Readings are for guidance only and do not replace professional advice.</p>
+  </section>
+
+  <section id="terms">
+    <h2>Terms and Conditions</h2>
+    <h3>Services</h3>
+    <p>Sonia Tarot provides tarot readings for guidance and entertainment purposes only. You are fully responsible for any decisions or actions you take following the reading.</p>
+    <h3>Payments</h3>
+    <p>All payments must be completed before a reading begins. Prices are as stated on the website and may change without prior notice. All sales are final.</p>
+    <h3>Confidentiality</h3>
+    <p>All information shared during a session is confidential and stays between Sonia Tarot and the querent. Sonia Tarot will not share your personal information with third parties, except as required by law.</p>
+    <h3>Health Disclaimer</h3>
+    <p>Sonia Tarot does not provide medical advice, diagnosis, or treatment. Please consult a qualified healthcare professional for any health concerns.</p>
+    <h3>Liability</h3>
+    <p>Sonia Tarot is not responsible for any choices, actions, or outcomes that may arise from your reading.</p>
+    <h3>Cancellations and Rescheduling</h3>
+    <p>You may reschedule your reading up to 24 hours before the appointment. No refunds are given for cancellations or missed appointments.</p>
+    <h3>Changes to Terms</h3>
+    <p>We reserve the right to update these terms at any time. Changes will be posted on this page.</p>
+    <p>If you have any questions, please contact us before booking.</p>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+
+  <footer style="text-align:center; padding:1em; background:#eee; margin-top:2em; font-size:0.9em; color:#522e5b;">
+    &copy; 2025 Sonia Tarot | 
+    <a href="mailto:your@email.com" style="color:#522e5b; text-decoration:none;">Email</a> | 
+    <a href="https://instagram.com/yourprofile" target="_blank" style="color:#522e5b; text-decoration:none;">Instagram</a>
+  </footer>
+
+</body>
+</html>
